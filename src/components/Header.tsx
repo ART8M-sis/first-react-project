@@ -1,9 +1,13 @@
-function Header(){
+interface HeaderProps{
+    studentName: string
+}
+
+export default function Header({studentName}:HeaderProps){
     return(
-        <header style={{backgroundColor: "#282c34" ,color: "white", padding:"20px"}}>
-            <h2>Мій перший React-застосунок</h2>
-            <p>Сьогодні ми вивчаемо компоненти</p>
+        <header>
+            <h2>Електронний щоденник студента</h2>
+            {/* Інтерпаляція рядків */}
+            <p>Вітаемо, {studentName}! Гарного навчання!</p>
         </header>
     )
 }
-export default Header;
