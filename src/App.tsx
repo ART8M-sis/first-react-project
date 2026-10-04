@@ -35,6 +35,7 @@
 }
 import HomeworkCard from "./components/HomeworkCard";
 import Section from "./components/Section";
+import LessonCard from "./components/LessonCard"
 
 const homeworks = [
   {
@@ -56,6 +57,35 @@ const homeworks = [
       course: 'React JS',
       isCompleted: false,
     },
+]
+
+const lessons = [
+  {
+    id: 1,
+    topic: 'Основи React',
+    date: '12.10.2026 10:00',
+    isOnline: true,
+    zoomLink: 'https://zoom.us/j/123456789',
+  },
+  {
+    id: 2,
+    topic: 'Робота з масивами',
+    date: '14.10.2026 12:30',
+    isOnline: false,
+  },
+  {
+    id: 3,
+    topic: 'Створення компонентів',
+    date: '16.10.2026 09:00',
+    isOnline: true,
+    zoomLink: 'https://zoom.us/j/987654321',
+  },
+  {
+    id: 4,
+    topic: 'React Hooks',
+    date: '18.10.2026 15:00',
+    isOnline: true,
+  },
 ]
 
 function App() {
@@ -118,6 +148,20 @@ function App() {
               course={hw.course}
               isCompleted={hw.isCompleted}
               score={hw.score} 
+            />
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Розклад">
+        <div className="bg-green-100">
+          {lessons.map((lesson) => (
+            <LessonCard
+              key={lesson.id}
+              topic={lesson.topic}
+              date={lesson.date}
+              isOnline={lesson.isOnline}
+              zoomLink={lesson.zoomLink}
             />
           ))}
         </div>
