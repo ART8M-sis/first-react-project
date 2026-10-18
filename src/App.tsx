@@ -38,6 +38,7 @@ import LessonCard from "./components/LessonCard";
 import Header from "./components/Header";
 import CourseCard from "./components/CoursCard";
 import { useState } from "react";
+import ProfileEditor from "./components/ProfileEditor";
 
 const myCourses = [
   {
@@ -178,6 +179,9 @@ function App() {
     // </div>*/}
 
     <main className="p-8">
+
+      <ProfileEditor />
+
       <Header studentName={userProfile.name} />
 
       <div className="p-5 m-2 w-72">
