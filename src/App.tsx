@@ -1,37 +1,3 @@
-{
-  // (Урок №1)
-  // import CityInfo from "./components/CityInfo";
-  // import BookInfo from "./components/BookInfo";
-  // (Урок №2)
-  // import { title } from "process";
-  // import Header from "./components/Header";
-  // import CourseCard from "./components/CoursCard";
-  // import Section from "./components/Section";
-  //
-  // (Урок №2)
-  // const myCourses=[
-  //   {
-  //     id: 'c1',
-  //     title: 'HTML/CSS',
-  //     teacher: 'Volodimir Jurlevich',
-  //     credits: 10,
-  //     isActive: true
-  //   },
-  //   {
-  //     id: 'c2',
-  //     title: 'JavaScript',
-  //     teacher: 'Volodimir Jurlevich',
-  //     credits: 20,
-  //     isActive: false
-  //   },
-  //   {
-  //     id: 'c3',
-  //     title: 'React JS',
-  //     teacher: 'Volodimir Jurlevich',
-  //     isActive: true
-  //   }
-  // ]
-}
 import HomeworkCard from "./components/HomeworkCard";
 import Section from "./components/Section";
 import LessonCard from "./components/LessonCard";
@@ -39,6 +5,7 @@ import Header from "./components/Header";
 import CourseCard from "./components/CoursCard";
 import { useState } from "react";
 import ProfileEditor from "./components/ProfileEditor";
+import CourseReview from "./components/CourseReview";
 
 const myCourses = [
   {
@@ -130,56 +97,7 @@ function App() {
     course.title.toLowerCase().includes(searchQuery.toLowerCase()),
   );
   return (
-    // {/*(Урок №1)
-    // //  <main>
-    // //   <CityInfo />
-    // //   <hr />
-    // //   <BookInfo />
-    // // </main>*/}
-    // {/*(Урок №2.1)
-    //   //<div>
-    //   //
-    //   // <CourseCard
-    //   //   title="React JS"
-    //   //   teacher="Volodimir Jurlevich"
-    //   //   credits={10}
-    //   //   isActive={true}
-    //   // />
-    //   // <CourseCard
-    //   //   title="HTML/CSS"
-    //   //   teacher="Volodimir Jurlevich"
-    //   //   isActive={false}
-    //   // />
-    //   //
-    //   // (Урок №2.2)
-    //   // <Header studentName="Володимир" />
-    //   //
-    //   // <Section title="Мої курси">
-    //   //   <div style={{ display: "flex", flexWrap: "wrap"}}>
-    //   //     {
-    //   //       myCourses.map((course)=>(
-    //   //         <CourseCard
-    //   //           key={course.id}
-    //   //           title={course.title}
-    //   //           teacher={course.teacher}
-    //   //           credits={course.credits}
-    //   //           isActive={course.isActive}
-    //   //           />
-    //   //       ))}
-    //   //   </div>
-    //   // </Section>
-    //   //
-    //   // <Section title="Мої завдання">
-    //   //   <p>Тут будуть моі завдання...</p>
-    //   // </Section>
-    //   //
-    //   // <Section title="Мої заняття">
-    //   //   <p>Тут будуть відвідані та майбутні заняття...</p>
-    //   // </Section>
-    // </div>*/}
-
     <main className="p-8">
-
       <ProfileEditor />
 
       <Header studentName={userProfile.name} />
@@ -223,6 +141,13 @@ function App() {
             <p className="text-gray-500">Курсів не знайдено.</p>
           )}
         </div>
+      </Section>
+
+      <Section  title="Відгуки про курс">
+        <CourseReview
+          courseTitle="React JS"
+          teacher="Володимир Юркевич"
+        />
       </Section>
 
       <Section title="Мої домашні завдання">
